@@ -1,0 +1,125 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <style>
+      body {
+        background: #252525;
+        color: #96f226
+      }
+      #drop {
+        float: right;
+      }
+      #click {
+        border-radius: 0px;
+        width: 150px;
+        height: 20px;
+        background: #4a4a4a;
+        color: #96f226;
+        cursor: pointer;
+      }
+      #click:hover {
+        background: #656565;
+      }
+      ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol li {
+        background: #4a4a4a;
+        color: #96f226;
+        width: 150px;
+        height: 20px;
+        cursor: pointer;
+      }
+      ol li:hover {
+        background: #656565;
+      }
+      #click.down {
+        color: #4a4a4a;
+        background: #96f226
+      }
+      #check {
+        width: 15px;
+        height: 15px;
+        background: #4a4a4a;
+        cursor: pointer;
+      }
+      #check:hover {
+        background: #656565
+      }
+      #check.active {
+        background: #96f226
+      }
+      input {
+        display: none;
+      }
+      #file {
+        background: #4a4a4a;
+      }
+      #down {
+        float: right;
+      }
+      body {
+        background: #252525;
+      }
+      .radio {
+        width: 15px;
+        height: 15px;
+        background: #4a4a4a;
+        cursor: pointer;
+        border-radius: 100%;
+      }
+      .radio:hover {
+        background: #656565;
+      }
+      .radio.active {
+        background: #96f226;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('ol').hide();
+        $('#click').click(function () {
+          $(this).toggleClass('down');
+          $('ol').toggle();
+          $('.l').click(function () {
+              $('#click').html($(this).html() + '<div id="down">&blacktriangledown;</div>');
+              $('#click').removeClass('down');
+              $('ol').hide();
+          });
+        });
+        $('#check').click(function () {
+          $(this).toggleClass('active');
+        });
+        $('.radio').click(function(){
+          $(this).toggleClass('active');
+            $('.radio').click(function(){
+              $('.radio').removeClass('active');
+              $(this).addClass('active');
+            });
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div id='click'><div id='down'>&blacktriangledown;</div></div>
+    <div id='list'>
+      <ol>
+        <li class='l'>Bonjour</li>
+        <li class='l'>Hello</li>
+        <li class='l'>Hola</li>
+      </ol>
+    </div>
+    <br />
+    <div id='check'></div>
+    <br />
+    <div id='radiogroup'>
+      <div class='radio'></div>
+      <br />
+      <div class='radio'></div>
+      <br />
+      <div class='radio'></div>
+    </div>
+  </body>
+</html>
