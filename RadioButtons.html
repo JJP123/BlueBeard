@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      $(document).ready(function(){
+        $('.radio').click(function(){
+          $(this).toggleClass('active');
+          $('.radio').click(function(){
+            $('.radio').removeClass('active');
+            $(this).addClass('active');
+          });
+        });
+      });
+    </script>
+    <style>
+      .radio {
+        width: 15px;
+        height: 15px;
+        background: #4a4a4a;
+        cursor: pointer;
+        border-radius: 100%;
+      }
+      .radio:hover {
+        background: #656565;
+      }
+      .radio.active {
+        background: #96f226;
+      }
+    </style>
+  </head>
+</html>
